@@ -1,0 +1,11 @@
+alfresco:
+    image: gui81/alfresco
+    container_name: alfresco
+    volumes:
+      - ./logs:/alfresco/tomcat/logs
+      # - ./extension:/alfresco/tomcat/shared/classes/alfresco/extension
+      # - ./web-extension:/alfresco/tomcat/webapps/share/WEB-INF/classes/alfresco/web-extension
+      - ./extension:/tmp/extension
+      - ./web-extension:/tmp/web-extension
+    ports:
+        - 8080:8080/tcp
